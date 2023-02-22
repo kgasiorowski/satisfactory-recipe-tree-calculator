@@ -1,0 +1,577 @@
+[
+  {
+    "name": "Iron Ore",
+    "recipes": null
+  },
+  {
+    "name": "Water",
+    "recipes": null
+  },
+  {
+    "name": "Iron Ingot",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Iron Ore": 30
+        },
+        "output_per_minute": 30
+      },
+      "Pure Iron Ingot": {
+        "inputs": {
+          "Iron Ore": 35,
+          "Water": 20
+        },
+        "output_per_minute": 65
+      },
+      "Iron Alloy Ingot": {
+        "inputs": {
+          "Iron Ore": 20,
+          "Copper Ore": 20
+        },
+        "output_per_minute": 50
+      }
+    }
+  },
+  {
+    "name": "Iron Plate",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Iron Ingot": 30
+        },
+        "output_per_minute": 20
+      }
+    }
+  },
+  {
+    "name": "Iron Rod",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Iron Ingot": 15
+        },
+        "output_per_minute": 15
+      }
+    }
+  },
+  {
+    "name": "Screw",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Iron Rod": 10
+        },
+        "output_per_minute": 40
+      }
+    }
+  },
+  {
+    "name": "Reinforced Iron Plate",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Iron Plate": 30,
+          "Screw": 60
+        },
+        "output_per_minute": 5
+      },
+      "Adhered Iron Plate": {
+        "inputs": {
+          "Iron Plate": 11.25,
+          "Rubber": 3.75
+        },
+        "output_per_minute": 3.75
+      },
+      "Bolted Iron Plate": {
+        "inputs": {
+          "Iron Plate": 90,
+          "Screw": 250
+        },
+        "output_per_minute": 15
+      },
+      "Stitched Iron Plate": {
+          "inputs": {
+            "Iron Plate": 18.75,
+            "Wire": 37.5
+          },
+          "output_per_minute": 5.625
+        }
+    }
+  },
+  {
+    "name": "Copper Ore",
+    "recipes": null
+  },
+  {
+    "name": "Copper Ingot",
+    "recipes": {
+      "default": {
+        "output_per_minute": 30,
+        "inputs": {
+          "Copper Ore": 30
+        }
+      },
+      "Pure Copper Ingot": {
+        "inputs": {
+          "Copper Ore": 15,
+          "Water": 10
+        },
+        "output_per_minute": 37.5
+      },
+      "Copper Alloy Ingot": {
+        "inputs": {
+          "Copper Ore": 50,
+          "Iron Ore": 25
+        },
+        "output_per_minute": 100
+      }
+    }
+  },
+  {
+    "name": "Wire",
+    "recipes": {
+      "default": {
+        "output_per_minute": 30,
+        "inputs": {
+          "Copper Ingot": 15
+        }
+      },
+      "Iron Wire": {
+        "output_per_minute": 22.5,
+        "inputs": {
+          "Iron Ingot": 12.5
+        }
+      }
+    }
+  },
+  {
+    "name": "Cable",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Wire": 60
+        },
+        "output_per_minute": 30
+      }
+    }
+  },
+  {
+    "name": "Limestone",
+    "recipes": null
+  },
+  {
+    "name": "Concrete",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Limestone": 45
+        },
+        "output_per_minute": 15
+      },
+      "Wet Concrete": {
+        "inputs": {
+          "Limestone": 120,
+          "Water": 100
+        },
+        "output_per_minute": 80
+      }
+    }
+  },
+  {
+    "name": "Copper Sheet",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Copper Ingot": 20
+        },
+        "output_per_minute": 10
+      }
+    }
+  },
+  {
+    "name": "Rotor",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Iron Rod": 20,
+          "Screw": 100
+        },
+        "output_per_minute": 4
+      },
+      "Steel Rotor": {
+        "inputs": {
+          "Steel Pipe": 10,
+          "Wire": 30
+        },
+        "output_per_minute": 5
+      }
+    }
+  },
+  {
+    "name": "Modular Frame",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Reinforced Iron Plate": 3,
+          "Iron Rod": 12
+        },
+        "output_per_minute": 2
+      },
+      "Bolted Frame": {
+        "inputs": {
+          "Reinforced Iron Plate": 7.5,
+          "Screw": 140
+        },
+        "output_per_minute": 5
+      },
+      "Steeled Frame": {
+        "inputs": {
+          "Reinforced Iron Plate": 2,
+          "Steel Pipe": 10
+        },
+        "output_per_minute": 3
+      }
+    }
+  },
+  {
+    "name": "Smart Plating",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Reinforced Iron Plate": 1,
+          "Rotor": 1
+        },
+        "output_per_minute": 2
+      }
+    }
+  },
+  {
+    "name": "Raw Quartz",
+    "recipes": null
+  },
+  {
+    "name": "Quartz Crystal",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Raw Quartz": 37.5
+        },
+        "output_per_minute": 22.5
+      }
+    }
+  },
+  {
+    "name": "Silica",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Raw Quartz": 22.5
+        },
+        "output_per_minute": 37.5
+      }
+    }
+  },
+  {
+    "name": "Coal",
+    "recipes": null
+  },
+  {
+    "name": "Steel Ingot",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Iron Ore": 45,
+          "Coal": 45
+        },
+        "output_per_minute": 45
+      },
+      "Solid Steel Ingot": {
+        "inputs": {
+          "Iron Ingot": 40,
+          "Coal": 40
+        },
+        "output_per_minute": 60
+      }
+    }
+  },
+  {
+    "name": "Steel Beam",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Steel Ingot": 60
+        },
+        "output_per_minute": 15
+      }
+    }
+  },
+  {
+    "name": "Steel Pipe",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Steel Ingot": 30
+        },
+        "output_per_minute": 20
+      }
+    }
+  },
+  {
+    "name": "Versatile Framework",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Steel Beam": 30,
+          "Modular Frame": 2.5
+        },
+        "output_per_minute": 5
+      }
+    }
+  },
+  {
+    "name": "Caterium Ore",
+    "recipes": null
+  },
+  {
+    "name": "Caterium Ingot",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Caterium Ore": 45
+        },
+        "output_per_minute": 15
+      }
+    }
+  },
+  {
+    "name": "Quickwire",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Caterium Ingot": 12
+        },
+        "output_per_minute": 60
+      },
+      "Fused Quickwire": {
+        "inputs": {
+          "Caterium Ingot": 7.5,
+          "Copper Ingot": 37.5
+        },
+        "output_per_minute": 90
+      }
+    }
+  },
+  {
+    "name": "Encased Industrial Beam",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Steel Beam": 24,
+          "Concrete": 30
+        },
+        "output_per_minute": 6
+      },
+      "Encased Industrial Pipe": {
+        "inputs": {
+          "Steel Pipe": 28,
+          "Concrete": 20
+        },
+        "output_per_minute": 4
+      }
+    }
+  },
+  {
+    "name": "Stator",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Steel Pipe": 15,
+          "Wire": 40
+        },
+        "output_per_minute": 5
+      }
+    }
+  },
+  {
+    "name": "Motor",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Rotor": 10,
+          "Stator": 10
+        },
+        "output_per_minute": 5
+      }
+    }
+  },
+  {
+    "name": "Automated Wiring",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Stator": 2.5,
+          "Cable": 50
+        },
+        "output_per_minute": 2.5
+      }
+    }
+  },
+  {
+    "name": "Heavy Modular Frame",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Modular Frame": 10,
+          "Steel Pipe": 30,
+          "Encased Industrial Beam": 10,
+          "Screw": 200
+        },
+        "output_per_minute": 2
+      },
+      "Heavy Encased Frame": {
+        "inputs": {
+          "Modular Frame": 18.75,
+          "Encased Indsdgfgsfdustrial Beam": 11.25,
+          "Rubber": 20,
+          "Screw": 390
+        },
+        "output_per_minute": 3.75
+      },
+      "Heavy Flexible Frame": {
+        "inputs": {
+          "Modular Frame": 7.5,
+          "Encased Industrial Beam": 9.375,
+          "Steel Pipe": 33.75,
+          "Concrete": 20.625
+        },
+        "output_per_minute": 2.185
+      }
+    }
+  },
+  {
+    "name": "Crystal Oscillator",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Quartz Crystal": 18,
+          "Cable": 14,
+          "Reinforced Iron Plate": 2.5
+        },
+        "output_per_minute": 1
+      }
+    }
+  },
+  {
+    "name": "AI Limiter",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Copper Sheet": 25,
+          "Quickwire": 100
+        },
+        "output_per_minute": 5
+      }
+    }
+  },
+  {
+    "name": "Crude Oil",
+    "recipes": null
+  },
+  {
+    "name": "Plastic",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Crude Oil": 30
+        },
+        "output_per_minute": 20
+      }
+    }
+  },
+  {
+    "name": "Rubber",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Crude Oil": 30
+        },
+        "output_per_minute": 20
+      }
+    }
+  },
+  {
+    "name": "Circuit Board",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Copper Sheet": 15,
+          "Plastic": 30
+        },
+        "output_per_minute": 7.5
+      },
+      "Caterium Circuit Board": {
+        "inputs": {
+          "Plastic": 12.5,
+          "Quickwire": 37.5
+        },
+        "output_per_minute": 8.75
+      }
+    }
+  },
+  {
+    "name": "Computer",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Circuit Board": 25,
+          "Cable": 22.5,
+          "Plastic": 45,
+          "Screw": 130
+        },
+        "output_per_minute": 2.5
+      },
+      "Caterium Computer": {
+        "inputs": {
+          "Quickwire": 105,
+          "Rubber": 45,
+          "Circuit Board": 26.25
+        },
+        "output_per_minute": 3.75
+      },
+      "Crystal Computer": {
+        "inputs": {
+          "Crystal Oscillator": 2.8125,
+          "Circuit Board": 7.5
+        },
+        "output_per_minute": 2.8125
+      }
+    }
+  },
+  {
+    "name": "Modular Engine",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Motor": 2,
+          "Rubber": 15,
+          "Smart Plating": 2
+        },
+        "output_per_minute": 1
+      }
+    }
+  },
+  {
+    "name": "Adaptive Control Unit",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Automated Wiring": 7.5,
+          "Circuit Board": 10,
+          "Heavy Modular Frame": 1,
+          "Computer": 1
+        },
+        "output_per_minute": 1
+      }
+    }
+  }
+]
