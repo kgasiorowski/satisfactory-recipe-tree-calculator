@@ -48,14 +48,19 @@ def load_recipes():
     return flat_recipe_map
 
 
-def print_recipe(item: Item, amount_per_minute: float, alts: dict=None):
+def print_recipe(item: Item, amount_per_minute: float, alts: dict=None, skipped_items: list=None):
     alts = alts if alts is not None else load_alt_selections()
-    base_ore_amounts = {}
+    base_ingredient_amounts = {}
 
     def __print_recipe_recurs(item: Item, amount_per_minute: float, tabnum: int):
 
         tabstring = ''.join(['\t' for _ in range(tabnum)])
         print(f"{tabstring}{item.name} - {round(amount_per_minute, 3)} pm")
+
+        if skipped_items is not None and item.name in skipped_items:
+            base_ingredient_amounts.setdefault(item.name, 0)
+            base_ingredient_amounts[item.name] += amount_per_minute
+            return
 
         if item.recipes:
             recipe = item.recipes['default']
@@ -65,24 +70,31 @@ def print_recipe(item: Item, amount_per_minute: float, alts: dict=None):
             for ingredient in recipe.ingredients:
                 __print_recipe_recurs(ingredient[0], amount_per_minute * (ingredient[1] / recipe.output_per_minute), tabnum+1)
         else:
-            base_ore_amounts.setdefault(item.name, 0)
-            base_ore_amounts[item.name] += amount_per_minute
+            base_ingredient_amounts.setdefault(item.name, 0)
+            base_ingredient_amounts[item.name] += amount_per_minute
 
     __print_recipe_recurs(item, amount_per_minute, 0)
 
-    for key in base_ore_amounts.keys():
-        base_ore_amounts[key] = round(base_ore_amounts[key], 4)
+    for key in base_ingredient_amounts.keys():
+        base_ingredient_amounts[key] = round(base_ingredient_amounts[key], 4)
 
-    return base_ore_amounts
+    return base_ingredient_amounts
 
 
 if __name__ == "__main__":
     recipes = load_recipes()
-    pprint(print_recipe(recipes['Heavy Modular Frame'], 10, {
-        "Encased Industrial Beam": "Encased Industrial Pipe",
-        "Steel Ingot": "Solid Steel Ingot",
-        "Modular Frame": "Steeled Frame",
-        "Concrete": "Wet Concrete",
-        "Heavy Modular Frame": "Heavy Flexible Frame",
-        "Reinforced Iron Plate": "Stitched Iron Plate"
-    }))
+    pprint(print_recipe(
+        recipes['Heavy Modular Frame'],
+        10,
+        alts={
+            "Encased Industrial Beam": "Encased Industrial Pipe",
+            "Steel Ingot": "Solid Steel Ingot",
+            "Modular Frame": "Steeled Frame",
+            "Concrete": "Wet Concrete",
+            "Heavy Modular Frame": "Heavy Flexible Frame",
+            "Reinforced Iron Plate": "Stitched Iron Plate"
+        },
+        skipped_items=[
+            "Encased Industrial Beam"
+        ]
+    ))
