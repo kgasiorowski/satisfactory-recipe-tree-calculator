@@ -1,5 +1,4 @@
-from Recipe import Recipe
-from Recipe import Item
+from models import (Recipe, Item)
 from pprint import pprint
 import json
 
@@ -55,7 +54,7 @@ def print_recipe(item: Item, amount_per_minute: float, alts: dict=None, skipped_
     def __print_recipe_recurs(item: Item, amount_per_minute: float, tabnum: int):
 
         tabstring = ''.join(['\t' for _ in range(tabnum)])
-        print(f"{tabstring}{item.name} - {round(amount_per_minute, 3)} pm")
+        print(f"{tabstring}{item.name} - {round(amount_per_minute, 4)} pm")
 
         if skipped_items is not None and item.name in skipped_items:
             base_ingredient_amounts.setdefault(item.name, 0)
@@ -84,17 +83,6 @@ def print_recipe(item: Item, amount_per_minute: float, alts: dict=None, skipped_
 if __name__ == "__main__":
     recipes = load_recipes()
     pprint(print_recipe(
-        recipes['Heavy Modular Frame'],
-        10,
-        alts={
-            "Encased Industrial Beam": "Encased Industrial Pipe",
-            "Steel Ingot": "Solid Steel Ingot",
-            "Modular Frame": "Steeled Frame",
-            "Concrete": "Wet Concrete",
-            "Heavy Modular Frame": "Heavy Flexible Frame",
-            "Reinforced Iron Plate": "Stitched Iron Plate"
-        },
-        skipped_items=[
-            "Encased Industrial Beam"
-        ]
+        recipes['Smart Plating'],
+        60
     ))
