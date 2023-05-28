@@ -268,6 +268,13 @@
           "Raw Quartz": 22.5
         },
         "output_per_minute": 37.5
+      },
+      "Cheap Silica": {
+        "inputs": {
+          "Raw Quartz": 11.25,
+          "Limestone": 18.75
+        },
+        "output_per_minute": 26.25
       }
     }
   },
@@ -571,6 +578,69 @@
           "Computer": 1
         },
         "output_per_minute": 1
+      }
+    }
+  },
+  {
+    "name": "Bauxite",
+    "recipes": null
+  },
+  {
+    "name": "Alumina Solution",
+    "recipes": {
+      "default": {
+        "output_per_minute": 120,
+        "inputs": {
+          "Bauxite": 120,
+          "Water": 180
+        }
+      }
+    }
+  },
+  {
+    "name": "Aluminum Scrap",
+    "recipes": {
+      "default": {
+        "output_per_minute": 360,
+        "inputs": {
+          "Alumina Solution": 240,
+          "Coal": 120
+        }
+      }
+    }
+  },
+  {
+    "name": "Aluminum Ingot",
+    "recipes": {
+      "default": {
+        "output_per_minute": 60,
+        "inputs": {
+          "Aluminum Scrap": 90,
+          "Silica": 75
+        }
+      }
+    }
+  },
+  {
+    "name": "Alclad Aluminum Sheet",
+    "recipes": {
+      "default": {
+        "output_per_minute": 30,
+        "inputs": {
+          "Aluminum Ingot": 30,
+          "Copper Ingot": 10
+        }
+      }
+    }
+  },
+  {
+    "name": "Aluminum Casing",
+    "recipes": {
+      "default": {
+        "output_per_minute": 60,
+        "inputs": {
+          "Aluminum Ingot": 90
+        }
       }
     }
   }
