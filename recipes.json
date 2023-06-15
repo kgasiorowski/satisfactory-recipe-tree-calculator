@@ -485,6 +485,28 @@
     "recipes": null
   },
   {
+    "name": "Heavy Oil Residue",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Crude Oil": 30
+        },
+        "output_per_minute": 40
+      }
+    }
+  },
+  {
+    "name": "Petroleum Coke",
+    "recipes": {
+      "default": {
+        "inputs": {
+          "Heavy Oil Residue": 40
+        },
+        "output_per_minute": 120
+      }
+    }
+  },
+  {
     "name": "Plastic",
     "recipes": {
       "default": {
@@ -522,6 +544,20 @@
           "Quickwire": 37.5
         },
         "output_per_minute": 8.75
+      },
+      "Electrode Circuit Board": {
+        "inputs": {
+          "Rubber": 30,
+          "Petroleum Coke": 45
+        },
+        "output_per_minute": 5
+      },
+      "Silicon Circuit Board": {
+        "inputs": {
+          "Copper Sheet": 27.5,
+          "Silica": 27.5
+        },
+        "output_per_minute": 12.5
       }
     }
   },
@@ -594,6 +630,13 @@
           "Bauxite": 120,
           "Water": 180
         }
+      },
+      "Sloppy Alumina": {
+        "output_per_minute": 240,
+        "inputs": {
+          "Bauxite": 200,
+          "Water": 200
+        }
       }
     }
   },
@@ -606,6 +649,13 @@
           "Alumina Solution": 240,
           "Coal": 120
         }
+      },
+      "Electrode - Aluminum Scrap": {
+        "output_per_minute": 300,
+        "inputs": {
+          "Alumina Solution": 180,
+          "Petroleum Coke": 60
+        }
       }
     }
   },
@@ -617,6 +667,12 @@
         "inputs": {
           "Aluminum Scrap": 90,
           "Silica": 75
+        }
+      },
+      "Pure Aluminum Ingot": {
+        "output_per_minute": 30,
+        "inputs": {
+          "Aluminum Scrap": 60
         }
       }
     }
@@ -640,6 +696,78 @@
         "output_per_minute": 60,
         "inputs": {
           "Aluminum Ingot": 90
+        }
+      }
+    }
+  },
+  {
+    "name": "Sulphur",
+    "recipes": null
+  },
+  {
+    "name": "Sulphuric Acid",
+    "recipes": {
+      "default": {
+        "output_per_minute": 50,
+        "inputs": {
+          "Sulphur": 50,
+          "Water": 50
+        }
+      }
+    }
+  },
+  {
+    "name": "Battery",
+    "recipes": {
+      "default": {
+        "output_per_minute": 20,
+        "inputs": {
+          "Sulphuric Acid": 50,
+          "Alumina Solution": 40,
+          "Aluminum Casing": 20
+        }
+      },
+      "Classic Battery": {
+        "output_per_minute": 30,
+        "inputs": {
+          "Sulphur": 45,
+          "Alclad Aluminum Sheet": 52.5,
+          "Plastic": 60,
+          "Wire": 90
+        }
+      }
+    }
+  },
+  {
+    "name": "Radio Control Unit",
+    "recipes": {
+      "default": {
+        "output_per_minute": 2.5,
+        "inputs": {
+          "Aluminum Casing": 40,
+          "Crystal Oscillator": 1.25,
+          "Computer": 1.25
+        }
+      }
+    }
+  },
+  {
+    "name": "High-Speed Connector",
+    "recipes": {
+      "default": {
+        "output_per_minute": 3.75,
+        "inputs": {
+          "Quickwire": 210,
+          "Cable": 37.5,
+          "Circuit Board": 1
+        }
+      },
+      "Silicon High-Speed Connector" : {
+        "output_per_minute": 3,
+        "inputs": {
+          "Quickwire": 90,
+          "Silica": 37.5,
+          "Circuit Board": 3
         }
       }
     }
