@@ -6,7 +6,7 @@ class Recipe(abc.ABC):
     __itemname__: str
     __recipename__: str
     __output_per_minute__: int | None
-    __ingredients__: Dict[str, int] | None
+    __ingredients__: Dict["Recipe", int] | None
 
     @classmethod
     def itemname(cls):
@@ -24,6 +24,15 @@ class Recipe(abc.ABC):
     def ingredients(cls):
         return cls.__ingredients__
 
+    @classmethod
+    def calculate_requirements_for_rate(cls, rate: float) -> Dict:
+        if cls.__ingredients__ is None:
+            return {cls.itemname(): rate}
+        required_ingredients = dict()
+        for ingredient, quantity in cls.__ingredients__.items():
+            sub_results = ingredient.calculate_requirements_for_rate(rate / cls.output_per_minute() * quantity)
+            required_ingredients.update(sub_results)
+        return required_ingredients
 
 class IronOre(Recipe):
     __recipename__ = "Iron Ore"
@@ -42,14 +51,14 @@ class CopperOre(Recipe):
 class IronIngot(Recipe):
     __recipename__ = "Iron Ingot"
     __itemname__ = "Iron Ingot"
-    __ingredients__ = {"Iron Ore": 30}
+    __ingredients__ = {IronOre: 30}
     __output_per_minute__ = 30
 
 
 class CopperIngot(Recipe):
     __recipename__ = "Copper Ingot"
     __itemname__ = "Copper Ingot"
-    __ingredients__ = {"Copper Ore": 30}
+    __ingredients__ = {CopperOre: 30}
     __output_per_minute__ = 30
 
 
@@ -63,7 +72,7 @@ class Water(Recipe):
 class PureIronIngot(Recipe):
     __recipename__ = "Pure Iron Ingot"
     __itemname__ = "Iron Ingot"
-    __ingredients__ = {"Iron Ore": 35, "Water": 20}
+    __ingredients__ = {IronOre: 35, Water: 20}
     __output_per_minute__ = 50
 
 
@@ -77,7 +86,7 @@ def _create_recipe_registry() -> RecipeRegistry:
         if isinstance(v, type) and issubclass(v, Recipe) and v.__name__ != Recipe.__name__:
             if v.__itemname__ not in r:
                 r[v.__itemname__] = [v]
-            else :
+            else:
                 r[v.__itemname__].append(v)
     return r
 
