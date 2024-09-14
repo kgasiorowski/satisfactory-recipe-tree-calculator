@@ -14,21 +14,24 @@
         "inputs": {
           "Iron Ore": 30
         },
-        "output_per_minute": 30
+        "output_per_minute": 30,
+        "machine": "Smelters"
       },
       "Pure Iron Ingot": {
         "inputs": {
           "Iron Ore": 35,
           "Water": 20
         },
-        "output_per_minute": 65
+        "output_per_minute": 65,
+        "machine": "Refineries"
       },
       "Iron Alloy Ingot": {
         "inputs": {
           "Iron Ore": 20,
           "Copper Ore": 20
         },
-        "output_per_minute": 50
+        "output_per_minute": 50,
+        "machine": "Foundries"
       }
     }
   },
@@ -39,7 +42,8 @@
         "inputs": {
           "Iron Ingot": 30
         },
-        "output_per_minute": 20
+        "output_per_minute": 20,
+        "machine": "Constructors"
       }
     }
   },
@@ -50,7 +54,8 @@
         "inputs": {
           "Iron Ingot": 15
         },
-        "output_per_minute": 15
+        "output_per_minute": 15,
+        "machine": "Constructors"
       }
     }
   },
@@ -62,6 +67,18 @@
           "Iron Rod": 10
         },
         "output_per_minute": 40
+      },
+      "Cast Screw": {
+        "inputs": {
+          "Iron Ingot": 12.5
+        },
+        "output_per_minute": 50
+      },
+      "Steel Screw": {
+        "inputs": {
+          "Steel Beam": 5
+        },
+        "output_per_minute": 260
       }
     }
   },
@@ -109,21 +126,24 @@
         "output_per_minute": 30,
         "inputs": {
           "Copper Ore": 30
-        }
+        },
+        "machine": "Smelters"
       },
       "Pure Copper Ingot": {
         "inputs": {
           "Copper Ore": 15,
           "Water": 10
         },
-        "output_per_minute": 37.5
+        "output_per_minute": 37.5,
+        "machine": "Refineries"
       },
       "Copper Alloy Ingot": {
         "inputs": {
           "Copper Ore": 50,
           "Iron Ore": 25
         },
-        "output_per_minute": 100
+        "output_per_minute": 100,
+        "machine": "Foundries"
       }
     }
   },
@@ -134,13 +154,23 @@
         "output_per_minute": 30,
         "inputs": {
           "Copper Ingot": 15
-        }
+        },
+        "machine": "Constructors"
       },
       "Iron Wire": {
         "output_per_minute": 22.5,
         "inputs": {
           "Iron Ingot": 12.5
-        }
+        },
+        "machine": "Constructors"
+      },
+      "Fused Wire": {
+        "output_per_minute": 90,
+        "inputs": {
+          "Copper Ingot": 12,
+          "Caterium Ingot": 3
+        },
+        "machine": "Assemblers"
       }
     }
   },
@@ -151,7 +181,8 @@
         "inputs": {
           "Wire": 60
         },
-        "output_per_minute": 30
+        "output_per_minute": 30,
+        "machine": "Constructors"
       }
     }
   },
@@ -184,7 +215,8 @@
         "inputs": {
           "Copper Ingot": 20
         },
-        "output_per_minute": 10
+        "output_per_minute": 10,
+        "machine": "Constructors"
       }
     }
   },
@@ -204,6 +236,13 @@
           "Wire": 30
         },
         "output_per_minute": 5
+      },
+      "Copper Rotor": {
+        "inputs": {
+          "Copper Sheet": 22.5,
+          "Screw": 195
+        },
+        "output_per_minute": 11.25
       }
     }
   },
@@ -242,6 +281,14 @@
           "Rotor": 1
         },
         "output_per_minute": 2
+      },
+      "Plastic Smart Plating": {
+        "inputs": {
+          "Reinforced Iron Plate": 2.5,
+          "Rotor": 2.5,
+          "Plastic": 7.5
+        },
+        "output_per_minute": 5
       }
     }
   },
@@ -256,7 +303,8 @@
         "inputs": {
           "Raw Quartz": 37.5
         },
-        "output_per_minute": 22.5
+        "output_per_minute": 22.5,
+        "machine": "Constructors"
       }
     }
   },
@@ -267,14 +315,16 @@
         "inputs": {
           "Raw Quartz": 22.5
         },
-        "output_per_minute": 37.5
+        "output_per_minute": 37.5,
+        "machine": "Constructors"
       },
       "Cheap Silica": {
         "inputs": {
           "Raw Quartz": 11.25,
           "Limestone": 18.75
         },
-        "output_per_minute": 26.25
+        "output_per_minute": 26.25,
+        "machine": "Assemblers"
       }
     }
   },
@@ -290,6 +340,7 @@
           "Iron Ore": 45,
           "Coal": 45
         },
+        "machine": "Foundries",
         "output_per_minute": 45
       },
       "Solid Steel Ingot": {
@@ -297,6 +348,7 @@
           "Iron Ingot": 40,
           "Coal": 40
         },
+        "machine": "Foundries",
         "output_per_minute": 60
       }
     }
@@ -308,7 +360,8 @@
         "inputs": {
           "Steel Ingot": 60
         },
-        "output_per_minute": 15
+        "output_per_minute": 15,
+        "machine": "Constructors"
       }
     }
   },
@@ -319,7 +372,8 @@
         "inputs": {
           "Steel Ingot": 30
         },
-        "output_per_minute": 20
+        "output_per_minute": 20,
+        "machine": "Constructors"
       }
     }
   },
@@ -332,6 +386,14 @@
           "Modular Frame": 2.5
         },
         "output_per_minute": 5
+      },
+      "Flexible Framework": {
+        "inputs": {
+          "Modular Frame": 3.75,
+          "Steel Beam": 22.5,
+          "Rubber": 30
+        },
+        "output_per_minute": 7.5
       }
     }
   },
@@ -346,7 +408,16 @@
         "inputs": {
           "Caterium Ore": 45
         },
-        "output_per_minute": 15
+        "output_per_minute": 15,
+        "machine": "Smelters"
+      },
+      "Pure Caterium Ingot": {
+        "inputs": {
+          "Caterium Ore": 24,
+          "Water": 24
+        },
+        "output_per_minute": 12,
+        "machine": "Smelters"
       }
     }
   },
@@ -357,14 +428,16 @@
         "inputs": {
           "Caterium Ingot": 12
         },
-        "output_per_minute": 60
+        "output_per_minute": 60,
+        "machine": "Constructors"
       },
       "Fused Quickwire": {
         "inputs": {
           "Caterium Ingot": 7.5,
           "Copper Ingot": 37.5
         },
-        "output_per_minute": 90
+        "output_per_minute": 90,
+        "machine": "Assemblers"
       }
     }
   },
@@ -395,7 +468,16 @@
           "Steel Pipe": 15,
           "Wire": 40
         },
-        "output_per_minute": 5
+        "output_per_minute": 5,
+        "machine": "Assemblers"
+      },
+      "Quickwire Stator": {
+        "inputs": {
+          "Steel Pipe": 16,
+          "Quickwire": 60
+        },
+        "output_per_minute": 8,
+        "machine": "Assemblers"
       }
     }
   },
@@ -435,7 +517,7 @@
         },
         "output_per_minute": 2
       },
-      "Heavy Encased Frame": {
+      "Heavy Flexible Frame": {
         "inputs": {
           "Modular Frame": 18.75,
           "Encased Industrial Beam": 11.25,
@@ -444,14 +526,14 @@
         },
         "output_per_minute": 3.75
       },
-      "Heavy Flexible Frame": {
+      "Heavy Encased Frame": {
         "inputs": {
           "Modular Frame": 7.5,
           "Encased Industrial Beam": 9.375,
           "Steel Pipe": 33.75,
           "Concrete": 20.625
         },
-        "output_per_minute": 2.185
+        "output_per_minute": 2.8125
       }
     }
   },
@@ -513,7 +595,8 @@
         "inputs": {
           "Crude Oil": 30
         },
-        "output_per_minute": 20
+        "output_per_minute": 20,
+        "machine": "Refineries"
       }
     }
   },
@@ -524,7 +607,8 @@
         "inputs": {
           "Crude Oil": 30
         },
-        "output_per_minute": 20
+        "output_per_minute": 20,
+        "machine": "Refineries"
       }
     }
   },
@@ -536,28 +620,32 @@
           "Copper Sheet": 15,
           "Plastic": 30
         },
-        "output_per_minute": 7.5
+        "output_per_minute": 7.5,
+        "machine": "Assemblers"
       },
       "Caterium Circuit Board": {
         "inputs": {
           "Plastic": 12.5,
           "Quickwire": 37.5
         },
-        "output_per_minute": 8.75
+        "output_per_minute": 8.75,
+        "machine": "Assemblers"
       },
       "Electrode Circuit Board": {
         "inputs": {
           "Rubber": 30,
           "Petroleum Coke": 45
         },
-        "output_per_minute": 5
+        "output_per_minute": 5,
+        "machine": "Assemblers"
       },
       "Silicon Circuit Board": {
         "inputs": {
           "Copper Sheet": 27.5,
           "Silica": 27.5
         },
-        "output_per_minute": 12.5
+        "output_per_minute": 12.5,
+        "machine": "Assemblers"
       }
     }
   },
@@ -629,14 +717,16 @@
         "inputs": {
           "Bauxite": 120,
           "Water": 180
-        }
+        },
+        "machine": "Refineries"
       },
       "Sloppy Alumina": {
         "output_per_minute": 240,
         "inputs": {
           "Bauxite": 200,
           "Water": 200
-        }
+        },
+        "machine": "Refineries"
       }
     }
   },
@@ -648,14 +738,22 @@
         "inputs": {
           "Alumina Solution": 240,
           "Coal": 120
-        }
+        },
+        "byproduct": {
+          "Water": 120
+        },
+        "machine": "Refineries"
       },
-      "Electrode - Aluminum Scrap": {
+      "Electrode-Aluminum Scrap": {
         "output_per_minute": 300,
         "inputs": {
           "Alumina Solution": 180,
           "Petroleum Coke": 60
-        }
+        },
+        "byproduct": {
+          "Water": 105
+        },
+        "machine": "Refineries"
       }
     }
   },
@@ -667,13 +765,15 @@
         "inputs": {
           "Aluminum Scrap": 90,
           "Silica": 75
-        }
+        },
+        "machine": "Foundries"
       },
       "Pure Aluminum Ingot": {
         "output_per_minute": 30,
         "inputs": {
           "Aluminum Scrap": 60
-        }
+        },
+        "machine": "Smelters"
       }
     }
   },
@@ -697,6 +797,34 @@
         "inputs": {
           "Aluminum Ingot": 90
         }
+      },
+      "Alclad Casing": {
+        "output_per_minute": 112.5,
+        "inputs": {
+          "Aluminum Ingot": 150,
+          "Copper Ingot": 75
+        }
+      }
+    }
+  },
+  {
+    "name": "Heat Sink",
+    "recipes": {
+      "default": {
+        "output_per_minute": 7.5,
+        "inputs": {
+          "Alclad Aluminum Sheet": 37.5,
+          "Copper Sheet": 3
+        },
+        "machine": "Assemblers"
+      },
+      "Heat Exchanger": {
+        "output_per_minute": 10,
+        "inputs": {
+          "Aluminum Casing": 30,
+          "Rubber": 30
+        },
+        "machine": "Assemblers"
       }
     }
   },
@@ -748,6 +876,15 @@
           "Crystal Oscillator": 1.25,
           "Computer": 1.25
         }
+      },
+      "Radio Control System": {
+        "output_per_minute": 3,
+        "inputs": {
+          "Aluminum Casing": 90,
+          "Crystal Oscillator": 1.5,
+          "Rubber": 45,
+          "Circuit Board": 15
+        }
       }
     }
   },
@@ -760,15 +897,356 @@
           "Quickwire": 210,
           "Cable": 37.5,
           "Circuit Board": 1
-        }
+        },
+        "machine": "Manufacturers"
       },
-      "Silicon High-Speed Connector" : {
+      "Silicon High-Speed Connector": {
         "output_per_minute": 3,
         "inputs": {
           "Quickwire": 90,
           "Silica": 37.5,
           "Circuit Board": 3
-        }
+        },
+        "machine": "Manufacturers"
+      }
+    }
+  },
+  {
+    "name": "Electromagnetic Control Rod",
+    "recipes": {
+      "default": {
+        "output_per_minute": 4,
+        "inputs": {
+          "Stator": 6,
+          "AI Limiter": 4
+        },
+        "machine": "Assemblers"
+      },
+      "Electromagnetic Connection Rod": {
+        "output_per_minute": 8,
+        "inputs": {
+          "Stator": 8,
+          "High-Speed Connector": 4
+        },
+        "machine": "Assemblers"
+      }
+    }
+  },
+  {
+    "name": "Beacon",
+    "recipes": {
+      "default": {
+        "output_per_minute": 7.5,
+        "inputs": {
+          "Iron Plate": 22.5,
+          "Iron Rod": 7.5,
+          "Wire": 112.5,
+          "Cable": 15
+        },
+        "machine": "Manufacturers"
+      },
+      "Crystal Beacon": {
+        "output_per_minute": 10,
+        "inputs": {
+          "Steel Beam": 2,
+          "Steel Pipe": 8,
+          "Crystal Oscillator": 0.5
+        },
+        "machine": "Manufacturers"
+      }
+    }
+  },
+  {
+    "name": "Sulfur",
+    "recipes": null
+  },
+  {
+    "name": "Uranium",
+    "recipes": null
+  },
+  {
+    "name": "Nitrogen Gas",
+    "recipes": null
+  },
+  {
+    "name": "Nitric Acid",
+    "recipes": {
+      "default": {
+        "output_per_minute": 30,
+        "inputs": {
+          "Nitrogen Gas": 120,
+          "Water": 30,
+          "Iron Plate": 10
+        },
+        "machine": "Blender"
+      }
+    }
+  },
+  {
+    "name": "Sulfuric Acid",
+    "recipes": {
+      "default": {
+        "output_per_minute": 50,
+        "inputs": {
+          "Sulfur": 50,
+          "Water": 50
+        },
+        "machine": "Refineries"
+      }
+    }
+  },
+  {
+    "name": "Encased Uranium Cell",
+    "recipes": {
+      "default": {
+        "output_per_minute": 25,
+        "inputs": {
+          "Uranium": 50,
+          "Concrete": 15,
+          "Sulfuric Acid": 40
+        },
+        "machine": "Blenders"
+      },
+      "Infused Uranium Cell": {
+        "output_per_minute": 20,
+        "inputs": {
+          "Uranium": 25,
+          "Silica": 15,
+          "Sulfur": 25,
+          "Quickwire": 75
+        },
+        "machine": "Manufacturers"
+      }
+    }
+  },
+  {
+    "name": "Uranium Fuel Rod",
+    "recipes": {
+      "default": {
+        "output_per_minute": 0.4,
+        "inputs": {
+          "Encased Uranium Cell": 20,
+          "Encased Industrial Beam": 1.2,
+          "Electromagnetic Control Rod": 2
+        },
+        "machine": "Manufacturers"
+      },
+      "Uranium Fuel Unit": {
+        "output_per_minute": 0.6,
+        "inputs": {
+          "Encased Uranium Cell": 20,
+          "Electromagnetic Control Rod": 2,
+          "Crystal Oscillator":  0.6,
+          "Beacon": 1.2
+        },
+        "machine": "Manufacturers"
+      }
+    }
+  },
+  {
+    "name": "Uranium Waste",
+    "recipes": null
+  },
+  {
+    "name": "Non-fissile Uranium",
+    "recipes": {
+      "default": {
+        "output_per_minute": 50,
+        "inputs": {
+          "Uranium Waste": 37.5,
+          "Silica": 25,
+          "Nitric Acid": 15,
+          "Sulfuric Acid": 15
+        },
+        "machine": "Blenders"
+      }
+    }
+  },
+  {
+    "name": "Plutonium Pellet",
+    "recipes": {
+      "default": {
+        "output_per_minute": 30,
+        "inputs": {
+          "Non-fissile Uranium": 100,
+          "Uranium Waste": 25
+        },
+        "machine": "Particle Accelerators"
+      }
+    }
+  },
+  {
+    "name": "Encased Plutonium Cell",
+    "recipes": {
+      "default": {
+        "output_per_minute": 5,
+        "inputs": {
+          "Plutonium Pellet": 10,
+          "Concrete": 20
+        },
+        "machine": "Assemblers"
+      }
+    }
+  },
+  {
+    "name": "Plutonium Fuel Rod",
+    "recipes": {
+      "default": {
+        "output_per_minute": 0.25,
+        "inputs": {
+          "Encased Plutonium Cell": 7.5,
+          "Steel Beam": 4.5,
+          "Electromagnetic Control Rod": 1.5,
+          "Heat Sink": 2.5
+        },
+        "machine": "Manufacturers"
+      }
+    }
+  },
+  {
+    "name": "Copper Powder",
+    "recipes": {
+      "default": {
+        "output_per_minute": 50,
+        "inputs": {
+          "Copper Ingot": 300
+        },
+        "machine": "Constructors"
+      }
+    }
+  },
+  {
+    "name": "Fused Modular Frame",
+    "recipes": {
+      "default": {
+        "output_per_minute": 1.5,
+        "inputs": {
+          "Heavy Modular Frame": 1.5,
+          "Aluminum Casing": 75,
+          "Nitrogen Gas": 37.5
+        },
+        "machine": "Blenders"
+      }
+    }
+  },
+  {
+    "name": "Pressure Conversion Cube",
+    "recipes": {
+      "default": {
+        "output_per_minute": 1,
+        "inputs": {
+          "Fused Modular Frame": 1,
+          "Radio Control Unit": 2
+        },
+        "machine": "Assemblers"
+      }
+    }
+  },
+  {
+    "name": "Nuclear Pasta",
+    "recipes": {
+      "default": {
+        "output_per_minute": 0.5,
+        "inputs": {
+          "Copper Powder": 100,
+          "Pressure Conversion Cube": 0.5
+        },
+        "machine": "Particle Accelerators"
+      }
+    }
+  },
+  {
+    "name": "Crude Oil",
+    "recipes": null
+  },
+  {
+    "name": "Heavy Oil Residue",
+    "recipes": {
+      "default": {
+        "output_per_minute": 40,
+        "inputs": {
+          "Crude Oil": 30
+          },
+        "machine": "Refineries"
+      }
+    }
+  },
+  {
+    "name": "Fuel",
+    "recipes": {
+      "default": {
+        "output_per_minute": 40,
+        "inputs": {
+          "Heavy Oil Residue": 60
+          },
+        "machine": "Refineries"
+      },
+      "Diluted Fuel": {
+        "output_per_minute": 100,
+        "inputs": {
+          "Water": 100,
+          "Heavy Oil Residue": 50
+        },
+        "machine": "Refineries"
+      }
+    }
+  },
+  {
+    "name": "Compacted Coal",
+    "recipes": {
+      "default": {
+        "output_per_minute": 25,
+        "inputs": {
+          "Sulfur": 25,
+          "Coal": 25
+          },
+        "machine": "Refineries"
+      }
+    }
+  },
+  {
+    "name": "Turbofuel",
+    "recipes": {
+      "default": {
+        "output_per_minute": 18.75,
+        "inputs": {
+          "Fuel": 22.5,
+          "Compacted Coal": 15
+          },
+        "machine": "Refineries"
+      },
+      "Heavy Turbo Fuel": {
+        "output_per_minute": 30,
+        "inputs": {
+          "Heavy Oil Residue": 37.5,
+          "Compacted Coal": 30
+          },
+        "machine": "Refineries"
+      },
+      "Turbo Blend Fuel": {
+        "output_per_minute": 45,
+        "inputs": {
+          "Fuel": 15,
+          "Heavy Oil Residue": 30,
+          "Petroleum Coke": 22.5,
+          "Sulphur": 22.5
+          },
+        "machine": "Blenders"
+      }
+    }
+  },
+  {
+    "name": "Supercomputer",
+    "recipes": {
+      "default": {
+        "output_per_minute": 1.875,
+        "inputs": {
+          "Computer": 3.75,
+          "AI Limiter": 3.75,
+          "High-Speed Connector": 5.625,
+          "Plastic": 52.5
+          },
+        "machine": "Manufacturers"
       }
     }
   }
