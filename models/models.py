@@ -1,8 +1,7 @@
 import abc
-from typing import Dict, Type
+from typing import Dict, Type, Any
 from enum import Enum
 import pydantic
-import math
 
 
 class BaseModel(pydantic.BaseModel):
@@ -15,18 +14,17 @@ class MachineType(Enum):
     smelter = 4
     foundry = 16
     refinery = 30
-    raw = -1
+    raw = 0
 
 
 AlternateRecipes = Dict[Type["Recipe"], Type["Recipe"]]
 
 
 class Recipe(BaseModel, abc.ABC):
-    default_recipe: bool = False
     item_name: str
     recipe_name: str
-    output_per_minute: int | None
-    ingredients: dict["Recipe", int] | None
+    output_per_minute: float | None
+    ingredients: dict["Recipe", float] | None
     machine_type: MachineType
 
     # would be handy to use these as dict keys so here we go
@@ -34,11 +32,11 @@ class Recipe(BaseModel, abc.ABC):
         return int.from_bytes(self.recipe_name.encode(), "little")
 
     def calculate_requirements_for_rate(
-            self,
-            rate: float,
-            alts: AlternateRecipes = {},
-            print_tree: bool = False,
-            num_tabs: int = 0,
+        self,
+        rate: float,
+        alts: AlternateRecipes = {},
+        print_tree: bool = False,
+        num_tabs: int = 0,
     ) -> dict[str, int]:
         if print_tree:
             output = f"{self.item_name} - {rate}"
@@ -53,10 +51,12 @@ class Recipe(BaseModel, abc.ABC):
             # The recipe for the ingredient could be an alt so check that here
             ingredient = alts[ingredient] if ingredient in alts else ingredient
             sub_results = ingredient.calculate_requirements_for_rate(
-                rate / self.output_per_minute * quantity,
+                rate=(rate / self.output_per_minute * quantity),
                 alts=alts,
                 num_tabs=num_tabs + 1,
                 print_tree=print_tree,
             )
-            required_ingredients.update(sub_results)
+            for base_ingredient, base_ingredient_rate in sub_results.items():
+                required_ingredients.setdefault(base_ingredient, 0)
+                required_ingredients[base_ingredient] += base_ingredient_rate
         return required_ingredients
