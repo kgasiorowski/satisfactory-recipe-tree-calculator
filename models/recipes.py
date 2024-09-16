@@ -77,7 +77,15 @@ concrete = Recipe(
     product_name="Concrete",
     ingredients={limestone: 45},
     output_per_minute=15,
-    machine_type=MachineType.constructor
+    machine_type=MachineType.constructor,
+)
+
+wet_concrete = Recipe(
+    recipe_name="Wet Concrete",
+    product_name="Concrete",
+    ingredients={limestone: 120, water: 100},
+    output_per_minute=80,
+    machine_type=MachineType.refinery,
 )
 
 raw_quartz = Recipe(
@@ -118,6 +126,14 @@ heavy_oil_residue_byproduct = Recipe(
     ingredients=None,
     output_per_minute=None,
     machine_type=MachineType.raw,
+)
+
+rubber = Recipe(
+    recipe_name="Rubber",
+    product_name="Rubber",
+    ingredients={crude_oil: 30, heavy_oil_residue_byproduct: -20},
+    output_per_minute=20,
+    machine_type=MachineType.refinery,
 )
 
 heavy_oil_residue = Recipe(
@@ -208,6 +224,14 @@ steel_ingot = Recipe(
     machine_type=MachineType.foundry,
 )
 
+cast_screw = Recipe(
+    recipe_name="Cast Screw",
+    product_name="Screw",
+    ingredients={iron_ingot: 12.5},
+    output_per_minute=50,
+    machine_type=MachineType.constructor,
+)
+
 solid_steel_ingot = Recipe(
     recipe_name="Solid Steel Ingot",
     product_name="Steel Ingot",
@@ -224,12 +248,20 @@ steel_beam = Recipe(
     machine_type=MachineType.constructor,
 )
 
+steel_screw = Recipe(
+    recipe_name="Steel Screw",
+    product_name="Screw",
+    ingredients={steel_beam: 5},
+    output_per_minute=260,
+    machine_type=MachineType.constructor,
+)
+
 molded_beam = Recipe(
     recipe_name="Molded Beam",
     product_name="Steel Beam",
     ingredients={steel_ingot: 120, concrete: 80},
     output_per_minute=45,
-    machine_type=MachineType.assembler
+    machine_type=MachineType.assembler,
 )
 
 steel_pipe = Recipe(
@@ -269,6 +301,22 @@ stitched_iron_plate = Recipe(
     product_name="Reinforced Iron Plate",
     ingredients={iron_plate: 18.75, wire: 37.5},
     output_per_minute=5.625,
+    machine_type=MachineType.assembler,
+)
+
+bolted_iron_plate = Recipe(
+    recipe_name="Bolted Iron Plate",
+    product_name="Reinforced Iron Plate",
+    ingredients={iron_plate: 90, screw: 250},
+    output_per_minute=15,
+    machine_type=MachineType.assembler,
+)
+
+adhered_iron_plate = Recipe(
+    recipe_name="Adhered Iron Plate",
+    product_name="Reinforced Iron Plate",
+    ingredients={iron_plate: 11.25, rubber: 3.75},
+    output_per_minute=3.75,
     machine_type=MachineType.assembler,
 )
 
@@ -376,14 +424,6 @@ plastic = Recipe(
     machine_type=MachineType.refinery,
 )
 
-rubber = Recipe(
-    recipe_name="Rubber",
-    product_name="Rubber",
-    ingredients={crude_oil: 30, heavy_oil_residue_byproduct: -20},
-    output_per_minute=20,
-    machine_type=MachineType.refinery,
-)
-
 plastic_smart_plating = Recipe(
     recipe_name="Plastic Smart Plating",
     product_name="Smart Plating",
@@ -461,5 +501,60 @@ flexible_framework = Recipe(
     product_name="Versatile Framework",
     ingredients={modular_frame: 3.75, steel_beam: 22.5, rubber: 30},
     output_per_minute=7.5,
+    machine_type=MachineType.manufacturer,
+)
+
+encased_industrial_beam = Recipe(
+    recipe_name="Encased Industrial Beam",
+    product_name="Encased Industrial Beam",
+    ingredients={steel_beam: 18, concrete: 36},
+    output_per_minute=6,
+    machine_type=MachineType.assembler,
+)
+
+encased_industrial_pipe = Recipe(
+    recipe_name="Encased Industrial Pipe",
+    product_name="Encased Industrial Beam",
+    ingredients={steel_pipe: 24, concrete: 20},
+    output_per_minute=4,
+    machine_type=MachineType.assembler,
+)
+
+heavy_modular_frame = Recipe(
+    recipe_name="Heavy Modular Frame",
+    product_name="Heavy Modular Frame",
+    ingredients={
+        modular_frame: 10,
+        steel_pipe: 40,
+        encased_industrial_beam: 10,
+        screw: 240,
+    },
+    output_per_minute=2,
+    machine_type=MachineType.manufacturer,
+)
+
+heavy_encased_frame = Recipe(
+    recipe_name="Heavy Encased Frame",
+    product_name="Heavy Modular Frame",
+    ingredients={
+        modular_frame: 7.5,
+        encased_industrial_beam: 9.375,
+        steel_pipe: 33.75,
+        concrete: 20.625,
+    },
+    output_per_minute=2.812,
+    machine_type=MachineType.manufacturer,
+)
+
+heavy_flexible_frame = Recipe(
+    recipe_name="Heavy Flexible Frame",
+    product_name="Heavy Modular Frame",
+    ingredients={
+        modular_frame: 18.75,
+        encased_industrial_beam: 11.25,
+        rubber: 75,
+        screw: 390,
+    },
+    output_per_minute=3.75,
     machine_type=MachineType.manufacturer,
 )
