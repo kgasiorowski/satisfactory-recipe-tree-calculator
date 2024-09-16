@@ -14,6 +14,7 @@ class MachineType(Enum):
     smelter = 4
     foundry = 16
     refinery = 30
+    manufacturer = 55
     raw = 0
 
 
@@ -21,7 +22,7 @@ AlternateRecipes = Dict[Type["Recipe"], Type["Recipe"]]
 
 
 class Recipe(BaseModel, abc.ABC):
-    item_name: str
+    product_name: str
     recipe_name: str
     output_per_minute: float | None
     ingredients: dict["Recipe", float] | None
@@ -32,20 +33,21 @@ class Recipe(BaseModel, abc.ABC):
         return int.from_bytes(self.recipe_name.encode(), "little")
 
     def calculate_requirements_for_rate(
-        self,
-        rate: float,
-        alts: AlternateRecipes = {},
-        print_tree: bool = False,
-        num_tabs: int = 0,
+            self,
+            rate: float,
+            alts: AlternateRecipes = {},
+            print_tree: bool = False,
+            num_tabs: int = 0,
+            skipped_items: list[str] = []
     ) -> dict[str, int]:
         if print_tree:
-            output = f"{self.item_name} - {rate}"
+            output = f"{self.product_name} - {rate}"
             if self.output_per_minute is not None:
                 output += f" - {round(rate / self.output_per_minute, 6)} {self.machine_type.name.capitalize()}(s)"
             print(("\t" * num_tabs) + output)
 
-        if self.ingredients is None:
-            return {self.item_name: rate}
+        if self.ingredients is None or self in skipped_items:
+            return {self.product_name: rate}
         required_ingredients = dict()
         for ingredient, quantity in self.ingredients.items():
             # The recipe for the ingredient could be an alt so check that here
@@ -55,6 +57,7 @@ class Recipe(BaseModel, abc.ABC):
                 alts=alts,
                 num_tabs=num_tabs + 1,
                 print_tree=print_tree,
+                skipped_items=skipped_items
             )
             for base_ingredient, base_ingredient_rate in sub_results.items():
                 required_ingredients.setdefault(base_ingredient, 0)
